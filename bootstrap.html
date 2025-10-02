@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Sweet Delights Bakery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Sweet Delights Bakery</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="bootstrap.html">About</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- About Section -->
+<section class="bg-light p-5 text-center">
+    <h2>About Us 🍩</h2>
+    <p>At Sweet Delights Bakery, we believe every cake tells a story 🎉. Our mission is to turn your sweetest dreams into delicious reality — from birthdays 🥳 to weddings 💍, or simply a little treat for yourself.</p>
+    <p>With fresh ingredients, skilled hands, and a pinch of creativity, we bake happiness into every bite. 💕</p>
+</section>
+
+<!-- More Products -->
+<div class="container mt-4">
+    <h3 class="text-center mb-4">Our Signature Creations ✨</h3>
+    <div class="row">
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <img src="images/cupcake.jpg" class="card-img-top" alt="Cupcake">
+                <div class="card-body text-center">
+                    <h5 class="card-title">🧁 Cupcakes</h5>
+                    <p class="card-text">Small in size, big in flavor! Perfect for parties, gifts, or a quick sweet fix.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <img src="images/birthday-cake.jpg" class="card-img-top" alt="Birthday Cake">
+                <div class="card-body text-center">
+                    <h5 class="card-title">🎉 Birthday Cake</h5>
+                    <p class="card-text">Celebrate your special day with a custom-made cake designed just for you!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <img src="images/wedding-cake.jpg" class="card-img-top" alt="Wedding Cake">
+                <div class="card-body text-center">
+                    <h5 class="card-title">💍 Wedding Cake</h5>
+                    <p class="card-text">Elegant, timeless, and crafted with love to make your big day even sweeter.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Interactive Form -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="card-title text-center">📝 Custom Order Form</h3>
+                    <form id="orderForm">
+                        <div class="mb-3">
+                            <label for="customerName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="customerName" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cakeType" class="form-label">Cake Type</label>
+                            <select class="form-select" id="cakeType">
+                                <option selected>Select a cake type</option>
+                                <option value="birthday">Birthday Cake</option>
+                                <option value="wedding">Wedding Cake</option>
+                                <option value="cupcake">Cupcakes</option>
+                                <option value="custom">Custom Design</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="specialRequests" class="form-label">Special Requests</label>
+                            <textarea class="form-control" id="specialRequests" rows="3" placeholder="Any special instructions?"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-success" onclick="submitOrder()">Submit Order 🎂</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact -->
+<section class="contact-section text-center p-5 mt-4">
+    <h3>Contact Us 📞</h3>
+    <p>📍 123 Bakery Street, Mersing, Johor</p>
+    <p>📞 07-1234567</p>
+    <p>📧 info@sweetdelights.com</p>
+</section>
+
+<!-- Pagination -->
+<div class="container text-center mt-3">
+    <nav>
+        <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" href="index.html">1</a></li>
+            <li class="page-item active"><a class="page-link" href="bootstrap.html">2</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center p-3 mt-4">
+    <p>&copy; 2025 Sweet Delights Bakery. All rights reserved. 🍪☕</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// JavaScript function for form submission
+function submitOrder() {
+    const name = document.getElementById('customerName').value;
+    const cakeType = document.getElementById('cakeType').value;
+    
+    if (name && cakeType !== 'Select a cake type') {
+        alert(`Thank you, ${name}! Your ${cakeType} order has been received. We'll contact you soon! 🎉`);
+        document.getElementById('orderForm').reset();
+    } else {
+        alert('Please fill in all required fields!');
+    }
+}
+</script>
+</body>
+</html>

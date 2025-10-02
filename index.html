@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Delights Bakery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Sweet Delights Bakery</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="bootstrap.html">About</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="bg-light text-center p-5">
+    <h1>Welcome to Sweet Delights Bakery 🎂</h1>
+    <p>Where every bite is made with ❤️ love, joy, and a sprinkle of happiness ✨.</p>
+    <p>From fluffy cupcakes to dreamy layered cakes, we bake fresh daily so you can enjoy sweet moments anytime! 🧁🍰</p>
+</header>
+
+<!-- Product Showcase -->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="images/chocolate-cake.jpg" class="img-fluid rounded mb-2 product-img" alt="Chocolate Cake">
+            <p class="text-center fw-bold">🍫 Chocolate Cake</p>
+        </div>
+        <div class="col-md-4">
+            <img src="images/vanilla-cake.jpg" class="img-fluid rounded mb-2 product-img" alt="Vanilla Cake">
+            <p class="text-center fw-bold">🍦 Vanilla Cake</p>
+        </div>
+        <div class="col-md-4">
+            <img src="images/red-velvet-cake.jpg" class="img-fluid rounded mb-2 product-img" alt="Red Velvet Cake">
+            <p class="text-center fw-bold">❤️ Red Velvet Cake</p>
+        </div>
+    </div>
+</div>
+
+<!-- Special Offer Section -->
+<div class="container text-center mt-5">
+    <button class="btn btn-warning btn-lg" onclick="showSpecialOffer()">
+        🎁 Click for Special Bakery Offer!
+    </button>
+</div>
+
+<!-- Alert Message -->
+<div class="container mt-4">
+    <div id="specialOffer" class="alert alert-success alert-dismissible fade show d-none" role="alert">
+        <h4 class="alert-heading">🎂 Special Bakery Deal!</h4>
+        <p>Get <strong>15% off</strong> your first order! Use code: <span class="badge bg-danger">SWEET15</span></p>
+        <hr>
+        <p class="mb-0">Offer valid until the end of this month. Limited time only!</p>
+        <button type="button" class="btn-close" onclick="closeSpecialOffer()"></button>
+    </div>
+</div>
+
+<!-- Interactive Counter -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="card-title">🍰 Product Counter</h3>
+                    <p class="card-text">How many cakes would you like to order?</p>
+                    <div class="display-4 text-danger my-3" id="counterValue">0</div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-success" onclick="incrementCounter()">
+                            Add Cake 🍰
+                        </button>
+                        <button type="button" class="btn btn-outline-danger" onclick="resetCounter()">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Why Choose Us Section -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="p-4 bg-light rounded shadow">
+                <h3 class="text-center mb-4">Why Choose Us? 🌟</h3>
+                <div class="row mt-3">
+                    <div class="col-md-4 text-center">
+                        <div class="feature-box">
+                            <h5>🍰 Fresh Daily</h5>
+                            <p>Baked fresh every morning with premium ingredients</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="feature-box">
+                            <h5>🎨 Custom Designs</h5>
+                            <p>Personalized cakes for every special occasion</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="feature-box">
+                            <h5>🚚 Free Delivery</h5>
+                            <p>Free delivery for orders over RM50 in Mersing area</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pagination -->
+<div class="container text-center mt-5">
+    <nav>
+        <ul class="pagination justify-content-center">
+            <li class="page-item active"><a class="page-link" href="index.html">1</a></li>
+            <li class="page-item"><a class="page-link" href="bootstrap.html">2</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center p-3 mt-4">
+    <p>&copy; 2025 Sweet Delights Bakery. All rights reserved. 🥐☕</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// JavaScript functions for special offer
+function showSpecialOffer() {
+    document.getElementById('specialOffer').classList.remove('d-none');
+}
+
+function closeSpecialOffer() {
+    document.getElementById('specialOffer').classList.add('d-none');
+}
+
+// Additional interactive feature - Product counter
+let productCounter = 0;
+
+function incrementCounter() {
+    productCounter++;
+    document.getElementById('counterValue').textContent = productCounter;
+}
+
+function resetCounter() {
+    productCounter = 0;
+    document.getElementById('counterValue').textContent = productCounter;
+}
+</script>
+</body>
+</html>
